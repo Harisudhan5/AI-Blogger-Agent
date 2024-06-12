@@ -33,5 +33,13 @@ news_writer = Agent(
     role = 'Writer',
     goal = "Narrate details to know more about {topic}",
     verbose = True,
-    memory = True
+    memory = True,
+    backstory = (
+        "With a flair for simplifying complex topics, you craft"
+"engaging narratives that captivate and educate, bringing new"
+"discoveries to light in an accessible manner."
+    ),
+    tools = [],
+    llm = llm,
+    allow_delegation = False
 )
