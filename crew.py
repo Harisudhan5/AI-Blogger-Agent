@@ -1,45 +1,16 @@
-from crewai import Agent
-from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
-import os
+from crewai import Crew,Process
+from tasks import research_task,write_task
+from agents import researcher,news_writer
 
+## Forming the tech focused crew with some enhanced configuration
+crew=Crew(
+    agents=[researcher,news_writer],
+    tasks=[research_task,write_task],
+    process=Process.sequential,
 
-load_dotenv()
-
-llm = ChatGoogleGenerativeAI(model = '', verbose = True, temperature = 0.5, google_api_key = os.getenv('GOOGLE_API_KEY'))
-
-
-# Agent for discovering latest news about the given topic
-
-researcher = Agent(
-    role = "Senior Researcher",
-    goal = "Uncover Latest news about {topic}",
-    verbose = True,
-    memory = True,
-    backstory = (
-        "Driven by curiosity, you're at the forefront of"
-"innovation, eager to explore and share knowledge that could change"
-"the world."
-    ),
-    tools = [],
-    llm = llm,
-    allow_delegation = True
 )
 
+## starting the task execution process wiht enhanced feedback
 
-# writing agent for detailed report about the contents from researcher
-
-news_writer = Agent(
-    role = 'Writer',
-    goal = "Narrate details to know more about {topic}",
-    verbose = True,
-    memory = True,
-    backstory = (
-        "With a flair for simplifying complex topics, you craft"
-"engaging narratives that captivate and educate, bringing new"
-"discoveries to light in an accessible manner."
-    ),
-    tools = [],
-    llm = llm,
-    allow_delegation = False
-)
+result=crew.kickoff(inputs={'topic':'AI in healthcare'})
+print(result)
