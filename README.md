@@ -40,6 +40,8 @@ This AI Blogger Agent is a crew consisting of two agents: the Researcher and the
 ## Usage
 The Agent can create a blog which is uptodate and prescise the long contexts and therby provides final blog in a html format. It uses DuckDuckGo Search to browse online to get the latest trends without being outdated and also uses gemini flash model via API to structure the contents iteratively.
 
+You can also make use of the jupiter notebook main.ipynb instead of python files.
+
 ## Contributing
 If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
