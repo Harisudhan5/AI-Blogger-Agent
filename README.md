@@ -25,17 +25,15 @@ This AI Blogger Agent is a crew consisting of two agents: the Researcher and the
 
 3. **Install Dependencies**
     ```sh
-    # For example, if you're using Python and a requirements.txt file
     pip install -r requirements.txt
 
 4. **Setup Environment Variables**
-    - Create a `.env` file in the root directory.
+    - In `.env` file provide the required api keys
     - Add the necessary environment variables as specified in `.env.example` or the documentation.
     - Give a topic before the run
 
 5. **Run the Project**
     ```sh
-    # Example for a Python project
     python crew.py
 
 
