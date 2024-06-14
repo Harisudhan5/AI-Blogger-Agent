@@ -3,28 +3,17 @@ from tools import tool
 from agents import researcher,news_writer
 
 # Research task
-research_task = Task(
-  description=(
-    "Identify the next big trend in {topic}."
-    "Focus on identifying pros and cons and the overall narrative."
-    "Your final report should clearly articulate the key points,"
-    "its market opportunities, and potential risks."
-  ),
-  expected_output='A comprehensive 3 paragraphs long report on the latest trends.',
-  tools=[tool],
-  agent=researcher,
+task1 = Task(
+description="Conduct a comprehensive analysis of the latest advancements in AI in 2024. Identify key trends, breakthrough technologies, and potential industry impacts. Your final answer MUST be a full analysis report",
+agent = researcher,
+expected_output='A comprehensive 5 paragraphs long report on the latest trends.',
 )
 
 # Writing task with language model configuration
-write_task = Task(
-  description=(
-    "Compose an insightful article on {topic}."
-    "Focus on the latest trends and how it's impacting the industry."
-    "This article should be easy to understand, engaging, and positive."
-  ),
-  expected_output='A 4 paragraph article on {topic} advancements formatted as markdown.',
-  tools=[tool],
-  agent=news_writer,
-  async_execution=False,
-  output_file='new-blog-post.md'  # Example of output customization
+task2 = Task(
+description="""Conduct a comprehensive analysis of the latest advancements in AI in 2024.
+Identify key trends, breakthrough technologies, and potential industry impacts.
+Your final answer MUST be a full analysis report""",
+agent = researcher,
+expected_output = "A final blog in html format"
 )
