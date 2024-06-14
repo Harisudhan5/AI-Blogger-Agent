@@ -4,7 +4,7 @@
 This AI Blogger Agent is a crew consisting of two agents: the Researcher and the Writer. The Researcher agent researches and brainstorms the given topic, then hands over the findings to the Writer agent to compose the report. If the Writer agent finds anything unsatisfactory, it calls upon the Researcher to perform further research. Through this iterative process, the final blog is crafted to meet the highest standards.
 
 
-![Custom Image](path/to/your/image.png)
+![Custom Image](image.png)
 
 ## Tools Used
 - **Programming Languages:** [Python]
