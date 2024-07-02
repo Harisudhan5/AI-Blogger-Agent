@@ -15,7 +15,7 @@ This AI Blogger Agent is a crew consisting of two agents: the Researcher and the
 
 1. **Clone the Repository**
     ```sh
-    git clone https://github.com/yourusername/your-repository.git
+    [git clone https://github.com/Harisudhan5/AI-Blogger-Agent.git
     ```
 
 2. **Navigate to the Project Directory**
